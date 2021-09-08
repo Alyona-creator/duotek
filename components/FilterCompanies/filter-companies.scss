@@ -1,0 +1,16 @@
+.filter-companies {
+  padding: 1.5rem 2rem;
+  background-color: #F7F7F7;
+  border-radius: .4rem;
+
+  @include mq-max(md) {
+    padding: 0;
+    background-color: #fff;
+  }
+
+  &__select {
+    &:not(:first-child) {
+      margin-top: 2.4rem;
+    }
+  }
+}

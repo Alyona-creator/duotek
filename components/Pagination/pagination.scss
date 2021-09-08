@@ -1,0 +1,51 @@
+.pagination {
+  display: flex;
+  margin-top: 2.4rem;
+
+  &__items {
+    display: flex;
+
+    & li {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      & .spacer {
+        background-color: transparent;
+        color: $color-grey;
+      }
+    }
+  }
+
+  &__button {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color: $color-blue;
+    height: 3.2rem;
+    width: 3.2rem;
+
+    &:hover {
+      color: $color-grey;
+
+      & .icon {
+        stroke: $color-grey;
+      }
+    }
+
+    & .icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      stroke: $color-blue;
+    }
+
+    &.disabled {
+      pointer-events: none;
+      color: $color-grey;
+
+      & .icon {
+        stroke: $color-grey;
+      }
+    }
+  }
+}

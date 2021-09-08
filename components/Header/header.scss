@@ -1,0 +1,156 @@
+.header {
+  padding: 2.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    transition: $transition-duration-base;
+
+    & .icon {
+      width: 16rem;
+      height: 5rem;
+      fill: $color-blue;
+    }
+
+    &:hover {
+      & .icon {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__nav {
+    @include mq-max(md) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @include mq-max(md) {
+      flex-flow: column;
+    }
+  }
+
+  &__item {
+    &:not(:first-child) {
+      margin-left: 4rem;
+
+      @include mq-max(md) {
+        margin-left: 0;
+        margin-top: 4rem;
+      }
+    }
+  }
+
+  &__link {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    color: $color-blue;
+
+    &:hover {
+      opacity: .3;
+    }
+
+    &.nuxt-link-active {
+      opacity: .3;
+    }
+  }
+
+  &__authorization {
+    @include mq-max(md) {
+      display: none;
+    }
+  }
+
+  &__mobile-btn {
+    display: none;
+
+    & .icon {
+      width: 4rem;
+      height: 4rem;
+      stroke: $color-blue;
+    }
+
+    @include mq-max(md) {
+      display: flex;
+    }
+  }
+}
+
+.page {
+  &__header {
+    &_blue {
+      background-color:$color-blue;
+
+      & .header__logo {
+        & .icon {
+          fill: $color-white;
+        }
+      }
+
+      & .header__link {
+        color: $color-white;
+      }
+
+      & .header__mobile-btn {
+        & .icon {
+          stroke: $color-white;
+        }
+      }
+    }
+  }
+}
+
+.mobile-menu {
+  transition: opacity, visibility, transform;
+  transition-timing-function: ease;
+  transition-duration: .3s;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: #fff;
+  overflow: hidden;
+  transform: translateX(-100%);
+  flex-flow: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &__close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+
+    & .icon {
+      width: 2.2rem;
+      height: 2.2rem;
+      fill: #030953;
+    }
+  }
+
+  &__authorization {
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    padding-top: 2rem;
+    width: 100%;
+    border-top: 1px solid $color-grey-200;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+}

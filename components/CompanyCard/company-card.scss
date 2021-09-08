@@ -1,0 +1,68 @@
+.company-card {
+  position: relative;
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 14.5rem 1fr;
+  gap: 0 2rem;
+  padding: 3.2rem 5.2rem 3.2rem 0;
+
+  @include mq-max(sm) {
+    grid-template-columns: 1fr;
+    gap: 2rem 0;
+    padding: 2rem;
+  }
+
+  &:hover {
+    & .company-card__title {
+      color: $color-red;
+    }
+
+    & .company-card__arrow {
+      display: block;
+    }
+  }
+
+  &__img {
+    max-height: 9.7rem;
+
+    & img {
+      width: 14.5rem;
+    }
+  }
+
+  &__title {
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    color: $color-blue;
+  }
+
+  &__description {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.1rem;
+    color: $color-black;
+    margin-top: 1rem;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  &__tag {
+    &:not(:first-child) {
+      margin-left: .4rem;
+    }
+  }
+
+  &__arrow {
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    bottom: 1.6rem;
+    right: 1.6rem;
+    display: none;
+  }
+}
